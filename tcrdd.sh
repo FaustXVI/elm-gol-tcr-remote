@@ -86,9 +86,11 @@ done
 
 if ${KNOWN_AS_RED} || (! ${KNOWN_AS_GREEN} && testJustAdded)
 then
+    echo red
     runTest && revert || commitRed
     pull
 else
+    echo green
     runTest && commitGreen || revert
     pull && push
 fi
