@@ -10,7 +10,10 @@ suite : Test
 suite =
     describe "Game of life"
         [ test "should init a grid" <|
-            \_ -> Expect.equal (init) [[]]
+            \_ -> Expect.equal (init) [
+              [ Cell.Dead, Cell.Dead, Cell.Dead],
+              [ Cell.Dead, Cell.Dead, Cell.Dead],
+              [ Cell.Dead, Cell.Dead, Cell.Dead]]
         , test "should show a grid" <|
             \_ -> Expect.equal (view [[]]) (text "Hello, world!")
         , describe "update" 
