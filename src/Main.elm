@@ -12,3 +12,5 @@ view : Model -> Html Msg
 view _ =
     text "Hello, world!"
 
+update : Msg -> Model -> (Model, Cmd Msg)
+update _ model = (model, Cmd.none)
