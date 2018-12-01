@@ -1,6 +1,6 @@
 module Main exposing (..)
 import Browser exposing (sandbox)
-import Html exposing (text, Html)
+import Html exposing (text, Html, div)
 import List exposing (map, repeat)
 
 type Cell = Dead | Alive
@@ -15,7 +15,7 @@ type Msg = NextGeneration
 
 view : Model -> Html Msg
 view _ =
-    text "Hello, world!"
+    div [] []
 
 update : Msg -> Model -> Model
 update _ model = case model of

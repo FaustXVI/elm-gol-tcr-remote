@@ -3,7 +3,7 @@ module MainSpecs exposing (..)
 import Main exposing (..)
 import Expect exposing (Expectation)
 import Test exposing (..)
-import Html exposing (text)
+import Html exposing (..)
 
 suite : Test
 suite =
@@ -14,7 +14,7 @@ suite =
               [ Dead, Dead, Dead],
               [ Dead, Dead, Dead]]
         , test "should show a grid" <|
-            \_ -> Expect.equal (view [[]]) (text "Hello, world!")
+            \_ -> Expect.equal (view [[]]) (div [] [])
         , describe "update"
             [ test "should stay dead when alone" <|
                 \_ -> Expect.equal (update NextGeneration [[Dead]]) [[Dead]]
