@@ -24,5 +24,7 @@ suite =
                 \_ -> Expect.equal (update NextGeneration [[Dead, Dead, Dead]]) [[Dead, Dead, Dead]]
             , test "should stay alive when 2 neighbours are alive" <|
                 \_ -> Expect.equal (update NextGeneration [[Alive, Alive, Alive]]) [[Dead, Alive, Dead]]
+            , test "should stay alive when 2 vertical neighbours are alive" <|
+                \_ -> Expect.equal (update NextGeneration [[Alive], [Alive], [Alive]]) [[Dead], [Alive], [Dead]]
             ]
         ]
