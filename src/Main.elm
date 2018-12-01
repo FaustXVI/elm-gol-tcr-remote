@@ -18,10 +18,12 @@ view _ =
     div [] []
 
 update : Msg -> Model -> Model
-update _ model = case model of
-    [[Alive], cell, _] -> [[Dead], cell, [Dead]]
-    [[Alive, cell, _]] -> [[Dead, cell, Dead]]
-    _ -> map (map (\_ -> Dead)) model
+update _ model = let
+                     aliveCount = map (map (\c -> if c == Alive then 1 else 0)) model
+                 in case model of
+                    [[Alive], cell, _] -> [[Dead], cell, [Dead]]
+                    [[Alive, cell, _]] -> [[Dead, cell, Dead]]
+                    _ -> map (map (\_ -> Dead)) model
 
 main = sandbox
     { init = init
