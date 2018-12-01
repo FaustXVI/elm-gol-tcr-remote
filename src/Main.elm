@@ -2,9 +2,13 @@ module Main exposing (..)
 import Browser exposing (sandbox)
 import Html exposing (text, Html, div)
 import List exposing (map, repeat)
+import Random exposing (Generator)
 
 type Cell = Dead | Alive
 type alias Model = List (List Cell)
+
+newCellState : Generator Cell
+newCellState = Random.map (\i -> if i >= 20 then Alive else Dead) (Random.int 1 100)
 
 init : Model
 init = mkGrid 3
