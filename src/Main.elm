@@ -1,7 +1,6 @@
-module Hello exposing (..)
-
+module Main exposing (..)
 import Html exposing (text)
 
 
 main =
-    text "Hello"
+    text "Hello, world!"
