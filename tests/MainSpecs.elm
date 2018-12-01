@@ -16,5 +16,7 @@ suite =
         , describe "update" 
             [ test "should stay dead when alone" <|
                 \_ -> Expect.equal (update NextGeneration [[Dead]]) [[Dead]]
+            , test "should die when alone" <|
+                \_ -> Expect.equal (update NextGeneration [[Alive]]) [[Dead]]
             ]
         ]
