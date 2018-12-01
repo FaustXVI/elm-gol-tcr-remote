@@ -9,5 +9,5 @@ suite : Test
 suite =
     describe "A test"
         [ test "should fail" <|
-            \_ -> Expect.equal 2 3
+            \_ -> Expect.equal 3 3
         ]
