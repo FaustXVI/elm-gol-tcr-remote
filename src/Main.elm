@@ -1,6 +1,7 @@
 module Main exposing (..)
 import Browser exposing (sandbox)
 import Html exposing (text, Html)
+import List exposing (map)
 
 type Liveness = Dead | Alive
 type alias Model = List (List Liveness)
@@ -15,7 +16,7 @@ view _ =
     text "Hello, world!"
 
 update : Msg -> Model -> Model
-update _ model = [[Dead]]
+update _ model = map (map (\_ -> Dead)) model
 
 main = sandbox
     { init = init
