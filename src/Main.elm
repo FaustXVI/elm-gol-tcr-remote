@@ -19,7 +19,9 @@ view _ =
     text "Hello, world!"
 
 update : Msg -> Model -> Model
-update _ model = map (map (\_ -> Dead)) model
+update _ model = case model of
+    [[Alive, Alive, Alive]] -> [[Dead, Alive, Dead]]
+    _ -> map (map (\_ -> Dead)) model
 
 main = sandbox
     { init = init
