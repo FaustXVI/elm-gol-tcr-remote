@@ -27,7 +27,7 @@ update _ model = let
                     _ -> map (map (\_ -> Dead)) model
 
 moveLeft : List (List Int) -> List (List Int)
-moveLeft matrix = matrix
+moveLeft matrix = map moveLineLeft matrix
 
 moveLineLeft : List Int -> List Int
 moveLineLeft line = case line of
