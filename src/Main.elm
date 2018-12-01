@@ -29,6 +29,11 @@ update _ model = let
 moveLeft : List (List Int) -> List (List Int)
 moveLeft matrix = matrix
 
+moveLineLeft : List Int -> List Int
+moveLineLeft line = case line of
+                        [] -> []
+                        x::xs -> xs ++ [0]
+
 main = sandbox
     { init = init
     , view = view
