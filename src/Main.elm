@@ -1,16 +1,13 @@
 module Main exposing (..)
 import Browser exposing (sandbox)
 import Html exposing (text, Html)
-import List exposing (map)
+import List exposing (map, repeat)
 
 type Cell = Dead | Alive
 type alias Model = List (List Cell)
 
 init : Model
-init = [
-  [ Dead, Dead, Dead],
-  [ Dead, Dead, Dead],
-  [ Dead, Dead, Dead]]
+init = repeat 3 <| repeat 3 Dead
 
 type Msg = NextGeneration
 
