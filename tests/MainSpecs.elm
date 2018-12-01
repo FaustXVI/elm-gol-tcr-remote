@@ -1,5 +1,6 @@
 module MainSpecs exposing (..)
 
+import Main exposing (..)
 import Expect exposing (Expectation)
 import Test exposing (..)
 import Main exposing (..)
