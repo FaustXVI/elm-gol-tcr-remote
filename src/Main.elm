@@ -7,7 +7,9 @@ type Cell = Dead | Alive
 type alias Model = List (List Cell)
 
 init : Model
-init = repeat 3 <| repeat 3 Dead
+init = mkGrid 3
+
+mkGrid n = repeat n <| repeat n Dead
 
 type Msg = NextGeneration
 
