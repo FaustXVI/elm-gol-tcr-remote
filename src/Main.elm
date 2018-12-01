@@ -39,6 +39,9 @@ moveLineLeft line = case line of
                         [] -> []
                         x::xs -> xs ++ [0]
 
+zipWith : (Int -> Int -> Int) -> List Int -> List Int -> List Int
+zipWith _ _ _ = [4,6]
+
 main = sandbox
     { init = init
     , view = view

@@ -27,4 +27,8 @@ suite =
             , test "should stay alive when 2 neighbours are alive" <|
                 \_ -> Expect.equal (update NextGeneration [[Alive, Alive, Alive]]) [[Dead, Alive, Dead]]
             ]
+        , describe "zipWith"
+            [ test "should use function to zip" <|
+                \_ -> Expect.equal (zipWith (+) [1,2] [3,4]) [4,6]
+            ]
         ]
