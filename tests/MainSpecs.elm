@@ -15,6 +15,6 @@ suite =
             \_ -> Expect.equal (view [[]]) (text "Hello, world!")
         , describe "update" 
             [ test "should update a grid" <|
-                \_ -> Expect.equal (update NoOp [[]]) [[]]
+                \_ -> Expect.equal (update NextGeneration [[Dead]]) [[Dead]]
             ]
         ]

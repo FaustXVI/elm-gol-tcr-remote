@@ -2,12 +2,13 @@ module Main exposing (..)
 import Browser exposing (sandbox)
 import Html exposing (text, Html)
 
-type alias Model = List (List Bool)
+type Liveness = Dead
+type alias Model = List (List Liveness)
 
 init : Model
 init = [[]]
 
-type Msg = NoOp
+type Msg = NextGeneration
 
 view : Model -> Html Msg
 view _ =
