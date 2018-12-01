@@ -3,11 +3,14 @@ import Browser exposing (sandbox)
 import Html exposing (text, Html)
 import List exposing (map)
 
-type Liveness = Dead | Alive
-type alias Model = List (List Liveness)
+type Cell = Dead | Alive
+type alias Model = List (List Cell)
 
 init : Model
-init = [[]]
+init = [
+  [ Dead, Dead, Dead],
+  [ Dead, Dead, Dead],
+  [ Dead, Dead, Dead]]
 
 type Msg = NextGeneration
 
