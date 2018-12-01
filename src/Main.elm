@@ -17,7 +17,7 @@ view _ =
 
 update : Msg -> Model -> Model
 update _ model = case model of
-    [[Alive, cell, Alive]] -> [[Dead, cell, Dead]]
+    [[Alive, cell, _]] -> [[Dead, cell, Dead]]
     _ -> map (map (\_ -> Dead)) model
 
 main = sandbox
