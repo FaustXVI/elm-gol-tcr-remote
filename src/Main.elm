@@ -20,10 +20,14 @@ view _ =
 update : Msg -> Model -> Model
 update _ model = let
                      aliveCount = map (map (\c -> if c == Alive then 1 else 0)) model
+                     neighboursCount = moveLeft aliveCount
                  in case model of
                     [[Alive], cell, _] -> [[Dead], cell, [Dead]]
                     [[Alive, cell, _]] -> [[Dead, cell, Dead]]
                     _ -> map (map (\_ -> Dead)) model
+
+moveLeft : List (List Int) -> List (List Int)
+moveLeft matrix = matrix
 
 main = sandbox
     { init = init
