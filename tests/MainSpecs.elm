@@ -13,8 +13,10 @@ suite =
               [ Dead, Dead, Dead],
               [ Dead, Dead, Dead],
               [ Dead, Dead, Dead]]
-        , test "should show a grid" <|
+        , describe "view" 
+            [test "should show a grid" <|
             \_ -> Expect.equal (view [[]]) (div [] [])
+            ]
         , describe "update"
             [ test "should stay dead when alone" <|
                 \_ -> Expect.equal (update NextGeneration [[Dead]]) [[Dead]]
@@ -24,7 +26,5 @@ suite =
                 \_ -> Expect.equal (update NextGeneration [[Dead, Dead, Dead]]) [[Dead, Dead, Dead]]
             , test "should stay alive when 2 neighbours are alive" <|
                 \_ -> Expect.equal (update NextGeneration [[Alive, Alive, Alive]]) [[Dead, Alive, Dead]]
-            , test "should stay alive when 2 vertical neighbours are alive" <|
-                \_ -> Expect.equal (update NextGeneration [[Alive], [Alive], [Alive]]) [[Dead], [Alive], [Dead]]
             ]
         ]
