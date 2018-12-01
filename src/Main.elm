@@ -8,7 +8,7 @@ type Cell = Dead | Alive
 type alias Model = List (List Cell)
 
 newCellState : Generator Cell
-newCellState = Random.map (\i -> if i >= 20 then Alive else Dead) (Random.int 1 100)
+newCellState = Random.weighted (50, Alive) [(50, Dead)]
 
 init : Model
 init = mkGrid 3
