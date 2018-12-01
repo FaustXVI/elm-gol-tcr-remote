@@ -14,5 +14,5 @@ suite =
         , test "should show a grid" <|
             \_ -> Expect.equal (view [[]]) (text "Hello, world!")
         , test "should update a grid" <|
-            \_ -> Expect.equal (update NoOp [[]]) ([[]], Cmd.none)
+            \_ -> Expect.equal (update NoOp [[]]) [[]]
         ]
