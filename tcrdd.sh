@@ -3,7 +3,7 @@ BRANCH=origin/master
 TEST_KEYWORD="Expect"
 
 function runTest() {
-    elm-test
+    yarn test
 }
 
 function testJustAdded(){
