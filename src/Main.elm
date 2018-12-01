@@ -40,7 +40,7 @@ moveLineLeft line = case line of
                         x::xs -> xs ++ [0]
 
 zipWith : (Int -> Int -> Int) -> List Int -> List Int -> List Int
-zipWith _ _ _ = [4,6]
+zipWith f a b = map (\(x,y) -> f x y) (zip a b)
 
 main = sandbox
     { init = init
