@@ -14,7 +14,7 @@ suite =
         , test "should show a grid" <|
             \_ -> Expect.equal (view [[]]) (text "Hello, world!")
         , describe "update" 
-            [ test "should update a grid" <|
+            [ test "should stay dead when alone" <|
                 \_ -> Expect.equal (update NextGeneration [[Dead]]) [[Dead]]
             ]
         ]
