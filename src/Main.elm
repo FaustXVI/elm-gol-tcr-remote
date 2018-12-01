@@ -3,6 +3,7 @@ import Browser exposing (sandbox)
 import Html exposing (text, Html, div)
 import List exposing (map, repeat)
 import Random exposing (Generator)
+import List.Extra exposing (zip)
 
 type Cell = Dead | Alive
 type alias Model = List (List Cell)
